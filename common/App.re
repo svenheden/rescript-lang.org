@@ -112,6 +112,10 @@ let default = (props: props): React.element => {
     }
   | {base: [|"docs", "reason-compiler"|], version: Latest} =>
     <ReasonCompilerDocsLayout> content </ReasonCompilerDocsLayout>
+  | {base: [|"docs", "react"|], version: Latest} =>
+    <ReactDocsLayout frontmatter={component->frontmatter}>
+      content
+    </ReactDocsLayout>
   | {base: [|"docs", "gentype"|], version: Latest} =>
     <GenTypeDocsLayout> content </GenTypeDocsLayout>
   // common routes
